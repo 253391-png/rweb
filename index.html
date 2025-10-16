@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>codigo html</title>
+</head><link rel="icon" type="image/png" href="up.png">
+
+<body style="background:black; color:white; margin:0; overflow:hidden; text-align: center;">
+  <h1 id="nombre" style="position:absolute;">Manuel Herrera</h1>
+<img src="peerito.png" alt="0" width="300">
+
+  <script>
+    let x = 100, y = 100, dx = 2, dy = 2;
+    const nombre = document.getElementById("nombre");
+
+    function mover() {
+      x += dx;
+      y += dy;
+
+      if (x <= 0 || x >= window.innerWidth - nombre.offsetWidth) dx *= -1;
+      if (y <= 0 || y >= window.innerHeight - nombre.offsetHeight) dy *= -1;
+
+      nombre.style.left = x + "px";
+      nombre.style.top = y + "px";
+
+      requestAnimationFrame(mover);
+    }
+
+    mover();
+  </script>
+</body>
+</html>
